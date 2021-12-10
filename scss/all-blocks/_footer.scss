@@ -1,0 +1,80 @@
+footer{
+    @include displayFlexSetter(space-between, center);
+    background-color: #1B262F;;
+    .logo{
+        img{
+            display: flex;
+        }
+    }
+    .footer{
+        width: 100%;
+        @include displayFlexSetter(space-between, center);
+        &__nav{
+            display: flex;
+            list-style: none;
+            margin-left: 0px;
+            margin-right: auto;
+            &__item{
+                display: flex;
+                &__link{
+                    font-family: 'Public Sans';
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 18px;
+                    color: #FBFCFE;
+                    mix-blend-mode: normal;
+                    opacity: 0.7;
+                    padding:10px 25px;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+            &__icon{
+                display: flex;
+                align-items: center;
+                &__link{
+                    color: white;
+                    padding-left: 30px;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    &__img{
+                        &:hover{
+                            opacity: 1;
+                            cursor: pointer;
+                            color: #DA6D97;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    footer{
+        flex-direction: column;
+        padding-top:15px!important;
+        padding-bottom:15px!important;
+        .footer{
+            flex-direction: column;
+            &__nav{
+                width: 100%;
+                align-items: center;
+                margin-top: 0;
+                color: white;
+                border-radius: 4px;
+                flex-direction: column;
+                &__item{
+                    padding-top: 15px;
+                    &__link{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

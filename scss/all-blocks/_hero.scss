@@ -1,0 +1,80 @@
+.hero{
+    @include displayFlexSetter(space-between, center);
+    .hero-text{
+        width: 50%;
+        h1{
+            font-family: 'DM Serif Display';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 72px;
+            line-height: 72px;
+            letter-spacing: -0.553846px;
+            color: #36536B;
+        }
+        p{
+            font-family: 'Public Sans';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 18px;
+            color: #6C8294;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+        .form{
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+            .email{
+                background: #FBFCFE;
+                box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+                border-radius: 24px;
+                padding: 12px 16px;
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: bold;
+                font-size: 15px;
+                line-height: 18px;
+                color: #36536B;
+                mix-blend-mode: normal;
+                opacity: 0.5;
+            }
+        }
+    }
+    .mobile-mockup-hero{
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        text-align: center;
+        img{
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .hero{
+        @include displayFlexSetter(space-between, center);
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 0px;
+        padding-bottom: 40px;
+        .hero-text{
+            width: 100%;
+            .form{
+                .email{
+                    width: 70%;
+                }
+                .email_btn{
+                    width: 70%;
+                }
+            }
+        }
+        .mobile-mockup-hero{
+            @include displayFlexSetter(center, center);
+        }
+    }
+}

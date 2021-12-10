@@ -1,0 +1,147 @@
+header{
+
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    @include displayFlexSetter(space-between, center);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: white;
+    .logo{
+        img{
+            display: flex;
+        }
+    }
+    .toggle{
+        width: 28px;
+        height: 24px;
+        // background-color: #2D314D;
+        display: none;
+    }
+    .navbar{
+        width: 100%;
+        @include displayFlexSetter(space-between, center);
+        &__nav{
+            display: flex;
+            list-style: none;
+            margin-left: 40px;
+            margin-right: auto;
+            &__item{
+                display: flex;
+                &__link{
+                    padding:10px 25px;
+                    font-size: 15px;
+                    color: #36536B;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    position: relative;
+                    font-family: 'Public Sans';
+                    font-style: normal;
+                    font-weight: bold;
+                    line-height: 18px;
+                    mix-blend-mode: normal;
+                    opacity: 0.7;
+                    &:hover{
+                        opacity: 1;
+                    }
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 4px;
+                        background: #36536B;
+                        bottom: 0;
+                        left: 0;
+                        opacity: 0;
+                        transition: opacity .5s ease-in-out;
+                    }
+    
+                    &:active::after{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    header{
+        position: relative;
+        height: 10vh;
+        padding-top:15px!important;
+        padding-bottom:15px!important;
+        .toggle{
+            &:hover{
+                cursor: pointer;
+            }
+            position: relative;
+            @include displayFlexSetter(space-evenly, center);
+            flex-direction: column;
+            &::after, &::before{
+                content: "";
+            }
+            &::after, &::before, &>span{
+                width: 100%;
+                height: 2px;
+                z-index: 4;
+                background-color: black;
+            }
+
+            &--active{
+                &::after, &::before{
+                    position: absolute;
+                }
+                &::after{
+                    top: 50%;
+                    background-color: white;
+                    transform: translateY(-50%) rotate(45deg);
+                }
+                &>span{
+                    opacity: 0;
+                }
+                &::before{
+                    bottom: 50%;
+                    background-color: white;
+                    transform: translateY(50%)  rotate(-45deg);
+                }
+            }
+        }
+        .navbar{
+            transition: all .5s ease-in-out;
+            position: absolute;
+            flex-direction: column;
+            background: black;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 75%;
+            height: 100vh;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            &__nav{
+                margin-top: 0;
+                color: white;
+                border-radius: 4px;
+                flex-direction: column;
+                width: 75%;
+                align-items: center;
+                &__item{
+                    padding-top: 15px;
+                    // margin: auto;
+                    // justify-content: center;
+                    &__link{
+                        color: white;
+                    }
+                }
+            }
+
+            &--active{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}

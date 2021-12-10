@@ -1,0 +1,51 @@
+.ready_to_start{
+    padding-bottom: 40px;
+    @include displayFlexSetter(space-between, center);
+    .header_title{
+        font-family: 'DM Serif Display';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: -0.369231px;
+        color: #36536B;
+    }
+    .form{
+        @include displayFlexSetter(space-between, center);
+        .email{
+            background: #FBFCFE;
+            box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+            border-radius: 24px;
+            padding: 12px 16px;
+            font-family: 'Public Sans';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 18px;
+            color: #36536B;
+            mix-blend-mode: normal;
+            opacity: 0.5;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    .ready_to_start{
+        @include displayFlexSetter(space-between, center);
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .form{
+        @include displayFlexSetter(space-between, center);
+        flex-direction: column;
+        .email{
+            padding-top: 20px;
+        }
+        .email_btn{
+            margin-top: 20px;
+        }
+    }
+}

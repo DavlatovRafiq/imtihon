@@ -1,0 +1,41 @@
+.perks-container{
+    @include displayFlexSetter(space-between, center);
+    .perk{
+        width: 30%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        h3{
+            font-family: 'Public Sans';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 25px;
+            text-align: center;
+            letter-spacing: -0.138462px;
+            color: #36536B;
+        }
+        p{
+            font-family: 'Public Sans';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 25px;
+            text-align: center;
+            letter-spacing: -0.115385px;
+            color: #6C8294;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .perks-container{
+        @include displayFlexSetter(space-between, center);
+        flex-direction: column;
+        .perk{
+            width: 70%;
+        }
+    }
+}

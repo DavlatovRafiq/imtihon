@@ -1,0 +1,25 @@
+.btn{
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: -0.115385px;
+    padding: 12px 18px;
+    border-radius: 22px;
+    text-decoration: none;
+    min-width: 130px;
+    font-size: 15px;
+    @include displayFlexSetter(center, center);
+
+    &--green{
+        background: #BA4270;
+        box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+        border-radius: 30px;
+        color: #FBFCFE;
+        &:hover{
+            background: #DA6D97;
+            box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+            border-radius: 30px;
+        }
+    }
+}
